@@ -1,11 +1,14 @@
 import scrapy
 from itemloaders.processors import TakeFirst, Compose
 
+""" Метод для обработки данных после парсинга в корректный вид"""
+
 
 def clean_name(value: list):
     try:
         value = value[0].replace('\n', '').replace('  ', '')
-    except:
+    except Exception as e:
+        print(f' Ошибка {e}')
         return value
     return value
 

@@ -7,15 +7,13 @@ from scrapy.loader import ItemLoader
 URL = 'https://www.castorama.ru'
 
 
-"""
-Парсим сайт магазина Касторама, для работы выбран раздел "Дача и сад/Почтовые ящики"
-"""
-
-
 class CastoPSpider(scrapy.Spider):
     name = "casto_p"
     allowed_domains = ["castorama.ru"]
-    start_urls = ['https://www.castorama.ru/gardening-and-outdoor/pochtovye-jaschiki/']
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.start_urls = [f"https://www.castorama.ru/{kwargs.get('section')}/{kwargs.get('category')}/"]
 
     def parse(self, response: HtmlResponse):
         next_page = response.xpath("//a[@class='next i-next']/@href").get()
