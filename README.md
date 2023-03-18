@@ -8,8 +8,7 @@ ___
 4. Photos of product saves in directory "files"
 ___
 ## Launch project
-write this code with parametrs: `python runner.py` *first param  second param*
-
+write this code with parametrs: `python runner.py` *first_param  second_param*
 - first param its section of site
 - second param its category of product in choosen section
 
