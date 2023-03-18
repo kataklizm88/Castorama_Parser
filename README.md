@@ -9,7 +9,6 @@ ___
 ___
 ## Launch project
 write this code with parametrs: `python runner.py` *first_param  second_param*
-
 - first param its section of site
 - second param its category of product in choosen section
 
